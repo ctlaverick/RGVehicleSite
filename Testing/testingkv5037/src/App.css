@@ -26,7 +26,6 @@ html, body, #root, .app-container {
 .logo {
   height: 100px;
   width: 100px;
-
 }
 
 .center-nav {
@@ -63,17 +62,25 @@ html, body, #root, .app-container {
   gap: 8px;
 }
 
-.footer-links {
+.footer-text {
   display: flex;
   gap: 16px;
 }
 
-.footer-links a {
+.footer-text a {
   color: #000000;
+  font-size: 18px;
   text-decoration: none;
   transition: color 0.3s;
 }
 
-.footer-links a:hover {
+.footer-text a:hover {
   color: #fbbf24;
+}
+
+.footer-text div div a {
+  color: #6e6e6e;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s;
 }
