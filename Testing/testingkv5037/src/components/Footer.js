@@ -6,9 +6,14 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-links">
-          <a href="/privacy-policy">Privacy Policy</a>
-          <a href="/terms-of-service">Terms of Service</a>
-          <a href="/contact">Contact Us</a>
+        {['Privacy policy', 'Terms of service', 'Contact us'].map((option) => (
+            <a
+              key={option}
+              href={option.replace(/\s/g, '-')}
+            >
+              {option}
+            </a>
+          ))}
         </div>
       </div>
     </footer>

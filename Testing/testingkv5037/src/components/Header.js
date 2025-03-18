@@ -12,12 +12,11 @@ const Header = () => {
             className="logo"
           />
         </div>
-  
         <nav className="nav center-nav">
           {['Home', 'About', 'Services', 'Contact'].map((option) => (
             <a
               key={option}
-              href={option}
+              href={option.replace(/\s/g, '-')}
               className="nav-link enhanced"
             >
               {option}
