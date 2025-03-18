@@ -17,7 +17,7 @@ const Header = () => {
           {['Home', 'About', 'Services', 'Contact'].map((option) => (
             <a
               key={option}
-              href={`#${option.toLowerCase()}`}
+              href={option}
               className="nav-link enhanced"
             >
               {option}

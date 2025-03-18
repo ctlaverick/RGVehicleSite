@@ -7,8 +7,7 @@ function App() {
     <div className='app-container'>
       <Header />
       <main className="main-content">
-        <h1>Welcome to Our Website!</h1>
-        <p>Here is some sample content to demonstrate the layout.</p>
+        <h1>Content goes here!</h1>
       </main>
       <Footer />
     </div>
