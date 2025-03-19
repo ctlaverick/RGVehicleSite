@@ -1,14 +1,13 @@
-import './App.css';
+import './index.css';
 import Header from './components/Header';
 import Footer from './components/Footer'
+import CarOption from './components/CarOption';
 
 function App() {
   return (
-    <div className='app-container'>
+    <div className='bg-Background min-h-full min-w-full'>
       <Header />
-      <main className="main-content">
-        <h1>Content goes here!</h1>
-      </main>
+      <CarOption />
       <Footer />
     </div>
   );

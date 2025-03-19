@@ -1,9 +1,8 @@
 import React from 'react';
-import '../App.css';
+import '../index.css';
 
 const Footer = () => {
   
-  // Subheadings for each option
   const subheadings = {
     'Privacy policy': ['Overview', 'Data Collection', 'User Rights'],
     'Terms of service': ['General Terms', 'Usage Policy', 'Liability'],
@@ -11,18 +10,18 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-text">
+    <footer className="bg-Primary text-white p-4 text-center">
+      <div className="flex flex-col items-center gap-2">
+        <div className="flex gap-8">
           {['Privacy policy', 'Terms of service', 'Contact us'].map((option) => (
             <div key={option}>
-              <a href={option.replace(/\s/g, '-')}>
+              <a href={option.replace(/\s/g, '-')} className="text-Secondary text-lg hover:text-Alerts">
                 {option}
               </a>
               <br />
               {subheadings[option].map((subheading) => (
                 <div key={subheading}>
-                  <a href={subheading.replace(/\s/g, '-')}>
+                  <a href={subheading.replace(/\s/g, '-')} className="text-Secondary text-sm hover:text-Alerts">
                     {subheading}
                   </a>
                   <br />
