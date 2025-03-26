@@ -12,13 +12,13 @@ import Contact from './pages/Contact';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Router>
-      <div className="bg-Background min-h-full min-w-full">
+      <div className='bg-Background min-h-full min-w-full'>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Services" element={<Services />} />
-          <Route path="/Contact" element={<Contact />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/About' element={<About />} />
+          <Route path='/Services' element={<Services />} />
+          <Route path='/Contact' element={<Contact />} />
         </Routes>
         <Footer />
       </div>

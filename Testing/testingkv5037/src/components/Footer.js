@@ -1,5 +1,4 @@
 import React from 'react';
-import '../index.css';
 
 const Footer = () => {
   
@@ -10,18 +9,18 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-Primary text-white p-4 text-center">
-      <div className="flex flex-col items-center gap-2">
-        <div className="flex gap-8">
+    <footer className='bg-Primary text-white p-4 text-center'>
+      <div className='flex flex-col items-center gap-2'>
+        <div className='flex gap-8'>
           {['Privacy policy', 'Terms of service', 'Contact us'].map((option) => (
             <div key={option}>
-              <a href={option.replace(/\s/g, '-')} className="text-Secondary text-lg hover:text-Alerts">
+              <a href={option.replace(/\s/g, '-')} className='text-Secondary text-lg hover:text-Alerts'>
                 {option}
               </a>
               <br />
               {subheadings[option].map((subheading) => (
                 <div key={subheading}>
-                  <a href={subheading.replace(/\s/g, '-')} className="text-Secondary text-sm hover:text-Alerts">
+                  <a href={subheading.replace(/\s/g, '-')} className='text-Secondary text-sm hover:text-Alerts'>
                     {subheading}
                   </a>
                   <br />
