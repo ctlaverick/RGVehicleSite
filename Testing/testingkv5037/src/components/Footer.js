@@ -1,35 +1,28 @@
 import React from 'react';
+import logo from '../images/logo.png';
+
 
 const Footer = () => {
   
-  const subheadings = {
-    'Privacy policy': ['Overview', 'Data Collection', 'User Rights'],
-    'Terms of service': ['General Terms', 'Usage Policy', 'Liability'],
-    'Contact us': ['Support', 'Feedback', 'Sales Inquiry'],
-  };
+  const headings = ['Contact us','Privacy policy','About us','Cookie policy','FAQ','Terms of service','News','Terms and conditions','Subscriptions','Accessibility'];
 
   return (
-    <footer className='bg-Primary text-white p-4 text-center'>
-      <div className='flex flex-col items-center gap-2'>
-        <div className='flex gap-8'>
-          {['Privacy policy', 'Terms of service', 'Contact us'].map((option) => (
-            <div key={option}>
-              <a href={option.replace(/\s/g, '-')} className='text-Secondary text-lg hover:text-Alerts'>
+    <footer className='bg-Primary text-white p-4 grid grid-cols-5 gap-3'>
+        <img src={logo} alt='Logo' className='h-24 w-24' />
+        <div className='grid grid-cols-2 gap-1'>
+          {headings.map((option) => (
+            <div key={option} className='col-span-1'>
+              <a href={option.replace(/\s/g, '-')} className='text-Admin-Text text-lg hover:text-Secondary'>
                 {option}
               </a>
-              <br />
-              {subheadings[option].map((subheading) => (
-                <div key={subheading}>
-                  <a href={subheading.replace(/\s/g, '-')} className='text-Secondary text-sm hover:text-Alerts'>
-                    {subheading}
-                  </a>
-                  <br />
-                </div>
-              ))}
             </div>
           ))}
         </div>
-      </div>
+            <h1 className='col-start-5 font-bold text-center text-Admin-Text'>Join our news letter!</h1>
+            <input type="text" id="email" class="col-start-5 w-full p-2.5 text-sm rounded-lg" placeholder="Enter Email address"/>
+            <button className="col-start-6 bg-Success text-Text py-2 px-4 rounded-lg">
+            Enter
+            </button>
     </footer>
   );
 };

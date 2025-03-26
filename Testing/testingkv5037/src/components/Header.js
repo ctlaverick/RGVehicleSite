@@ -18,7 +18,7 @@ const Header = () => {
           <Link
             key={name}
             to={path}
-            className='text-Secondary font-bold text-lg uppercase cursor-pointer transition duration-300 hover:text-Alerts'
+            className='text-Admin-Text font-bold text-lg uppercase cursor-pointer transition duration-300 hover:text-Secondary'
           >
             {name}
           </Link>

@@ -5,8 +5,8 @@ const imagelist = images.keys().map(image => images(image));
 
 const CarOption = () => {
   return (
-    <div className="flex flex-col items-center gap-4">
-  <h1 className="text-xl font-semibold">Recommended cars:</h1>
+  <div className="flex flex-col items-center gap-4">
+    <h1 className="text-xl font-semibold">Recommended cars:</h1>
   <div className="flex flex-wrap justify-center gap-4">
     {imagelist.map((image, index) => (
       <div key={index} className="flex flex-col items-center w-1/4 p-2 border border-gray-300">
@@ -18,7 +18,7 @@ const CarOption = () => {
         <div className="flex justify-between items-center w-full p-2">
           <span className="text-sm text-gray-700">Car Model</span>
           <button className="bg-Success hover:bg-Success text-Text py-2 px-4 rounded">
-            Button
+            Select
           </button>
         </div>
       </div>

@@ -5,9 +5,6 @@ const Home = () => {
   return (
     <div className='p-8 text-center'>
       <h1 className='text-3xl font-bold'>Home!</h1>
-      <button class="bg-primary">
-            Select
-          </button>
       <CarOption />
     </div>
   );
