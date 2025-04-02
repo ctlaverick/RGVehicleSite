@@ -1,4 +1,4 @@
-pls make sure ur editing on the right branch 
+pls make sure ur editing on the right one
 
 cd Main/mainapp for main 
 
