@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Home = () => {
+const Contact = () => {
   return (
     <div className='p-8 text-center'>
       <h1 className='text-3xl font-bold'>Contact!</h1>
@@ -8,4 +8,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Contact;

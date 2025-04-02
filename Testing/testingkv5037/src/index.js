@@ -12,7 +12,7 @@ import Contact from './pages/Contact';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Router>
-      <div className='bg-Background min-h-full min-w-full'>
+      <div className='bg-Background'>
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
