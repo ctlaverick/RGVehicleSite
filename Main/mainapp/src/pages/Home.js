@@ -4,7 +4,7 @@ import CarOption from '../components/CarOption';
 
 const images = require.context('../images/cars', false, /\.(jpg|jpeg|png)$/);
 const carImages = images.keys().map(image => ({
-  name: image.replace('./', '').replace(/\.(jpg|jpeg|png)$/, ''), // Extract filename as name
+  name: image.replace('./', '').replace(/\.(jpg|jpeg|png)$/, ''),
   image: images(image),
 }));
 
