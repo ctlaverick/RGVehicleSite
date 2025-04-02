@@ -13,7 +13,7 @@ const Home = () => {
     <div>
       <div className='p-8 mt-8 m-4 bg-Primary rounded-lg'>
         <h1 className='text-center text-Admin-Text font-Bold text-3xl'>Find your perfect car today</h1>
-        <div className='flex flex-wrap justify-center gap-4 Text-black'>
+        <div className='flex flex-wrap justify-center gap-4'>
           <input type="text" id="email" class="w-xs p-2.5 m-4 text-sm rounded-lg" placeholder="Type"/>
           <input type="text" id="email" class="w-xs p-2.5 m-4 text-sm rounded-lg" placeholder="Make"/>
           <input type="text" id="email" class="w-xs p-2.5 m-4 text-sm rounded-lg" placeholder="Location"/>
