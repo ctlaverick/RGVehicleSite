@@ -15,10 +15,17 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/About' element={<About />} />
-          <Route path='/About-Us' element={<About />} />
-          <Route path='/Services' element={<Services />} />
-          <Route path='/Contact' element={<Contact />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/services' element={<Services />} />
+          <Route path='/contact' element={<Contact />} />
+          {/* <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+          <Route path='/cookie-policy' element={<CookiePolicy />} />
+          <Route path='/faq' element={<FAQ />} />
+          <Route path='/terms-of-service' element={<TermsOfService />} />
+          <Route path='/news' element={<News />} />
+          <Route path='/terms-and-conditions' element={<TermsAndConditions />} />
+          <Route path='/subscriptions' element={<Subscriptions />} />
+          <Route path='/accessibility' element={<Accessibility />} /> */}
         </Routes>
         <Footer />
       </div>

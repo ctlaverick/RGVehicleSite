@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from './images/logo.png';
 
 const Header = () => {
-    const headings = [
+    const HeaderHeadings = [
       { name: 'Home', path: '/' },
       { name: 'About', path: '/About' },
       { name: 'Services', path: '/Services' },
@@ -16,7 +16,7 @@ const Header = () => {
           <img src={logo} alt='Logo' className='h-16 w-16 object-contain' />
         </div>
         <nav className='flex flex-1 justify-center gap-6 px-4'>
-          {headings.map(({ name, path }) => (
+          {HeaderHeadings.map(({ name, path }) => (
             <Link
               key={name}
               to={path}
@@ -31,24 +31,33 @@ const Header = () => {
   };
 
 const Footer = () => {
-  const headings = [
-    'Contact us', 'Privacy policy', 'About us', 'Cookie policy', 'FAQ',
-    'Terms of service', 'News', 'Terms and conditions', 'Subscriptions', 'Accessibility'
+  const FooterHeadings = [
+    { name: 'Contact us', path: '/contact-us' },
+    { name: 'Privacy policy', path: '/privacy-policy' },
+    { name: 'About us', path: '/about' },
+    { name: 'Cookie policy', path: '/cookie-policy' },
+    { name: 'FAQ', path: '/faq' },
+    { name: 'Terms of service', path: '/terms-of-service' },
+    { name: 'News', path: '/news' },
+    { name: 'Terms and conditions', path: '/terms-and-conditions' },
+    { name: 'Subscriptions', path: '/subscriptions' },
+    { name: 'Accessibility', path: '/accessibility' }
   ];
 
   return (
     <footer className='bg-primary text-admin-text p-6 grid grid-cols-5 gap-4 text-left'>
     <img src={logo} alt='Logo' className='h-24 w-24 col-start-1 col-span-1' />
     
+    
     <div className='grid grid-cols-2 col-start-2 col-span-2'>
-      {headings.map((option) => (
-        <div key={option} className='col-span-1'>
-          <a href={option.replace(/\s/g, '-')} className='text-admin-text text-lg hover:text-secondary'>
-            {option}
-          </a>
-        </div>
-      ))}
-    </div>
+        {FooterHeadings.map(({ name, path }) => (
+          <div key={name} className='col-span-1'>
+            <a href={path} className='text-admin-text text-lg hover:text-secondary'>
+              {name}
+            </a>
+          </div>
+        ))}
+      </div>
     
     <div className='col-start-5 col-span-1'>
       <h1 className='font-bold mb-2'>Join our newsletter!</h1>
