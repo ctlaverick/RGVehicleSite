@@ -1,5 +1,5 @@
 import React from 'react';
-import CarOption from '../components/CarOption';
+import { CarOption } from '../components';
 
 const images = import.meta.glob('../images/cars/*.{jpg,jpeg,png}', { eager: true });
 const carImages = Object.entries(images).map(([path, image]) => ({
