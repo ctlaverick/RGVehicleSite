@@ -1,5 +1,5 @@
 import React from 'react';
-import { CarOption } from '../components';
+import * as Components from '../components';
 
 const images = import.meta.glob('../images/cars/*.{jpg,jpeg,png}', { eager: true });
 const carImages = Object.entries(images).map(([path, image]) => ({
@@ -21,22 +21,18 @@ const Home = () => {
           <input type="text" className="w-xs p-2.5 m-4 text-sm rounded-lg bg-admin-background" placeholder="Maximum"/>
         </div>
         <div className='flex flex-wrap justify-center gap-4'>
-          <button className="bg-success text-text py-2 px-4 rounded-md">
-            Search
-          </button>
+          <Components.MainButton text='Search'/>
         </div>
       </div>
       <div className='p-8 text-center'>
         <h1 className="text-xl font-semibold">Recommended cars:</h1>
         <div className="flex flex-wrap justify-center gap-4">
           {carImages.map((car, index) => (
-            <CarOption key={index} name={car.name} image={car.image} />
+            <Components.CarOption key={index} name={car.name} image={car.image} />
           ))}
         </div>
         <div className='justify-center p-8'>
-          <button className="col-start-6 bg-primary text-admin-text py-2 px-4 rounded-lg hover:text-secondary">
-            View more options
-          </button>
+          <Components.MainButton text='View more options'/>
         </div>
       </div>
     </div>

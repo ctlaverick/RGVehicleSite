@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
-import { Header, Footer, CarOption} from "./components.jsx";
+import * as Components from './components';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
       <div className='bg-background min-h-screen min-w-full'>
-        <Header />
+        <Components.Header />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
@@ -27,7 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/subscriptions' element={<Subscriptions />} />
           <Route path='/accessibility' element={<Accessibility />} /> */}
         </Routes>
-        <Footer />
+        <Components.Footer />
       </div>
     </Router>
   </React.StrictMode>

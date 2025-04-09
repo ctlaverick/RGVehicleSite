@@ -62,9 +62,7 @@ const Footer = () => {
     <div className='col-start-5 col-span-1'>
       <h1 className='font-bold mb-2'>Join our newsletter!</h1>
       <input type="text" className="w-full p-2 text-sm rounded-lg text-text bg-admin-background" placeholder="Enter Email address"/>
-      <button className="mt-2 w-full bg-success text-admin-text py-2 px-4 rounded-lg">
-        Enter
-      </button>
+      <MainButton text='Enter'/>
     </div>
   </footer>
   );
@@ -80,12 +78,18 @@ const CarOption = ({ name, image }) => {
         />
         <div className="flex justify-between items-center w-full p-2">
           <span className="text-sm text-gray-700">{name}</span>
-          <button className="bg-success text-admin-text py-2 px-4 rounded-lg hover:bg-green-600">
-            Select
-          </button>
+          <MainButton text='Select'/>
         </div>
       </div>
     );
   };
 
-export { Header, Footer, CarOption };
+  const MainButton = ({ text }) => {
+    return (
+      <button className="bg-success text-admin-text py-2 px-4 rounded-lg hover:bg-green-600 hover:text-secondary cursor-pointer">
+            {text}
+      </button>
+    )
+  }
+
+export { Header, Footer, CarOption, MainButton };
