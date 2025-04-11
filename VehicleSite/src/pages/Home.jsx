@@ -8,7 +8,15 @@ const carImages = Object.entries(images).map(([path, image]) => ({
   image: image.default
 }));
 
+const FAQ ={
+  "Question 1":"Answer 1",
+  "Question 2":"Answer 2",
+  "Question 3":"This is a really long answer to a really simple question just to be able to test the size limits of the box that this answer is put in so that it is able to be tested for different paragraphs of text, who knows if this is as long as i need it but im gonna keep typing till i think it should stop so probably right about now.",
+  "Question 4":"Answer 4"
+}
+
 const Home = () => {
+  const FAQ_Entries = Object.entries(FAQ);
   return (
     <div>
       <div className="flex items-center justify-between bg-background p-8">
@@ -53,6 +61,12 @@ const Home = () => {
         <div className='justify-center p-8'>
           <Components.MainButton text='View more options'/>
         </div>
+      </div>
+      <div className='p-8 text-center'>
+        <h1 className="text-xl font-semibold">FAQ</h1>
+        {FAQ_Entries.map(([question, answer], index) => (
+          <Components.FaqDropdown key={index} question={question} answer={answer} />
+        ))}
       </div>
     </div>
   );
