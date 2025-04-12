@@ -15,8 +15,16 @@ const FAQ ={
   "Question 4":"Answer 4"
 }
 
+const steps = {
+  "1" : ["Search Our Options", ["Browse our collection of vehicles", "Search for your perfect vehicle", "Use our filtering and search system to find the right vehicle for you"]],
+  "2" : ["Customize Your Subscription", ["Choose your subscription package", "Get discounts on extended subscriptions", "Get insurance with your subscription"]],
+  "3" : ["Subscribe to Your New Vehicle", ["Finaliize your subscription car package", "Enter your payment details", "Select a time for pickup"]],
+  "4" : ["Pickup You Subscription Vehicle", ["Your subscription will be processed in minutes", "Finally pickup your vehicle at the location and time you selected"]],
+}
+
 const Home = () => {
   const FAQ_Entries = Object.entries(FAQ);
+  const STEPS_ENTRIES = Object.entries(steps);
   return (
     <div>
       <div className="flex items-center justify-between bg-background p-8">
@@ -60,6 +68,15 @@ const Home = () => {
         </div>
         <div className='justify-center p-8'>
           <Components.MainButton text='View more options'/>
+        </div>
+      </div>
+      <div className="p-8 text-center">
+        <h2 className="text-xl font-semibold">The 4 Easy Steps To Getting Your New Subscripton Vehicle</h2>
+        <div className="flex flex-col justify-center items-center gap-4 mt-4">
+          {STEPS_ENTRIES.map(([step, details], index) => (
+          <Components.StepCard key={index} step={step} details={details}/>
+          ))
+          }
         </div>
       </div>
       <div className='p-8 text-center'>
