@@ -26,6 +26,18 @@ const Header = () => {
             </Link>
           ))}
         </nav>
+        <div className='flex items-center gap-4'>
+          <Link to='/signup'>
+            <button className='bg-success text-admin-text py-2 px-4 rounded-lg hover:bg-green-600 hover:text-secondary transition duration-300'>
+              Sign Up
+            </button>
+          </Link>
+          <Link to='/login'>
+            <button className='bg-success text-admin-text py-2 px-4 rounded-lg hover:bg-green-600 hover:text-secondary transition duration-300'>
+              Login
+            </button>
+          </Link>
+        </div>
       </header>
     );
   };
@@ -62,7 +74,7 @@ const Footer = () => {
     <div className='col-start-5 col-span-1'>
       <h1 className='font-bold mb-2'>Join our newsletter!</h1>
       <input type="text" className="w-full p-2 text-sm rounded-lg text-text bg-admin-background" placeholder="Enter Email address"/>
-      <MainButton text='Enter'/>
+      <MainButton text='Submit'/>
     </div>
   </footer>
   );
@@ -86,7 +98,7 @@ const CarOption = ({ name, image }) => {
 
   const MainButton = ({ text }) => {
     return (
-      <button className="bg-success text-admin-text py-2 px-4 rounded-lg hover:bg-green-600 hover:text-secondary cursor-pointer">
+      <button className="bg-success text-admin-text py-2 px-4 rounded-lg hover:bg-green-600 hover:text-secondary cursor-pointer mt-2">
             {text}
       </button>
     )
