@@ -1,6 +1,5 @@
 import React from 'react';
 import * as Components from '../components';
-import banner from "../images/BannerCar.png"
 
 const images = import.meta.glob('../images/cars/*.{jpg,jpeg,png}', { eager: true });
 const carImages = Object.entries(images).map(([path, image]) => ({
@@ -8,7 +7,7 @@ const carImages = Object.entries(images).map(([path, image]) => ({
   image: image.default
 }));
 
-const FAQ ={
+export const FAQ ={
   "What is a subscription vehicle?":"Answer 1",
   "How does a subscription vehicle Work?":"Answer 2",
   "How long can I have a subscription vehicle":"This is a really long answer to a really simple question just to be able to test the size limits of the box that this answer is put in so that it is able to be tested for different paragraphs of text, who knows if this is as long as i need it but im gonna keep typing till i think it should stop so probably right about now.",
@@ -42,7 +41,7 @@ const Home = () => {
       </div>
       <div className="w-1/2">
         <img
-          src={banner}
+          src="./src/images/BannerCar.png"
           alt="Car"
           className="max-w-full h-auto items-center"
         />
