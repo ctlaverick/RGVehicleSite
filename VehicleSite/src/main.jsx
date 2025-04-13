@@ -7,6 +7,9 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import FAQPage from './pages/FAQ';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -18,14 +21,17 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/about' element={<About />} />
           <Route path='/services' element={<Services />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/faq' element={<FAQPage />} />
           {/* <Route path='/privacy-policy' element={<PrivacyPolicy />} />
           <Route path='/cookie-policy' element={<CookiePolicy />} />
-          <Route path='/faq' element={<FAQ />} />
           <Route path='/terms-of-service' element={<TermsOfService />} />
           <Route path='/news' element={<News />} />
           <Route path='/terms-and-conditions' element={<TermsAndConditions />} />
           <Route path='/subscriptions' element={<Subscriptions />} />
-          <Route path='/accessibility' element={<Accessibility />} /> */}
+          <Route path='/accessibility' element={<Accessibility />} />
+           */}
         </Routes>
         <Components.Footer />
       </div>
