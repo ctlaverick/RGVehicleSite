@@ -9,10 +9,13 @@ const carImages = Object.entries(images).map(([path, image]) => ({
 }));
 
 const FAQ ={
-  "Question 1":"Answer 1",
-  "Question 2":"Answer 2",
-  "Question 3":"This is a really long answer to a really simple question just to be able to test the size limits of the box that this answer is put in so that it is able to be tested for different paragraphs of text, who knows if this is as long as i need it but im gonna keep typing till i think it should stop so probably right about now.",
-  "Question 4":"Answer 4"
+  "What is a subscription vehicle?":"Answer 1",
+  "How does a subscription vehicle Work?":"Answer 2",
+  "How long can I have a subscription vehicle":"This is a really long answer to a really simple question just to be able to test the size limits of the box that this answer is put in so that it is able to be tested for different paragraphs of text, who knows if this is as long as i need it but im gonna keep typing till i think it should stop so probably right about now.",
+  "How do you pay for a subscription vehicle":"Answer 4",
+  "Do i have to get insurance for the subscription vehicle":"Answer 4",
+  "How often can I upgrade to a newer model":"Answer 4",
+  "Can I have multiple subscription vehicles":"Answer 4",
 }
 
 const steps = {
@@ -41,7 +44,7 @@ const Home = () => {
         <img
           src={banner}
           alt="Car"
-          className="w-auto h-100 items-center"
+          className="max-w-full h-auto items-center"
         />
       </div>
     </div>
