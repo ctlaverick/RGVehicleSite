@@ -24,9 +24,12 @@ const steps = {
   "4" : ["Pickup You Subscription Vehicle", ["Your subscription will be processed in minutes", "Finally pickup your vehicle at the location and time you selected"]],
 }
 
+const stats = ['Make', 'Model', '#WD', 'Type'];
+
 const Home = () => {
   const FAQ_Entries = Object.entries(FAQ);
   const STEPS_ENTRIES = Object.entries(steps);
+  const Stats_Entries = Object.entries(stats);
   return (
     <div>
       <div className="flex items-center justify-between bg-background p-8">
@@ -64,8 +67,9 @@ const Home = () => {
       <div className='p-8 text-center'>
         <h1 className="text-xl font-semibold">Recommended cars:</h1>
         <div className="flex flex-wrap justify-center gap-4">
+        
           {carImages.map((car, index) => (
-            <Components.CarOption key={index} name={car.name} image={car.image} />
+            <Components.CarOption key={index} name={car.name} image={car.image} stats={Stats_Entries} />
           ))}
         </div>
         <div className='justify-center p-8'>

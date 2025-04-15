@@ -80,21 +80,35 @@ const Footer = () => {
   );
 };
 
-const CarOption = ({ name, image }) => {
-    return (
-      <div className="flex flex-col items-center w-1/5 p-2 border border-gray-300 rounded-lg shadow-md">
+const CarOption = ({ name, image, stats }) => {
+  return (
+    <div className="flex flex-col items-center w-1/5 p-2 border border-gray-300 rounded-lg shadow-md">
+      <div className="relative w-full">
+        <div className="absolute top-2 left-2 flex gap-1 z-10">
+          {stats.map((stat, i) => (
+            <div
+              key={i}
+              className="w-4 h-4 bg-primary text-admin-text text-[10px] flex items-center justify-center rounded-sm"
+            >
+              {stat}
+            </div>
+          ))}
+        </div>
+
         <img
           src={image}
           alt={name}
-          className="object-cover border-b-2 border-gray-300 rounded-md"
+          className="w-full object-cover border-b-2 border-gray-300 rounded-md"
         />
-        <div className="flex justify-between items-center w-full p-2">
-          <span className="text-sm text-gray-700">{name}</span>
-          <MainButton text='Select'/>
-        </div>
       </div>
-    );
-  };
+
+      <div className="flex justify-between items-center w-full p-2">
+        <span className="text-sm text-gray-700">{name}</span>
+        <MainButton text="Select" />
+      </div>
+    </div>
+  );
+};
 
   const MainButton = ({ text }) => {
     return (

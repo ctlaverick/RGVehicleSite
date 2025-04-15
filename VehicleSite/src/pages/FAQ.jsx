@@ -2,9 +2,8 @@ import React from 'react';
 import * as Components from '../components';
 import { FAQ } from './Home';
 
-const extraFAQ = { ...FAQ };  // Create a copy of FAQ to keep it separate from Home
+const extraFAQ = { ...FAQ };
 
-// Add extra FAQs
 extraFAQ["Bonus Question 1"] = "Bonus Answer 1";
 extraFAQ["Bonus Question 2"] = "Bonus Answer 2";
 extraFAQ["Bonus Question 3"] = "Bonus Answer 3";
