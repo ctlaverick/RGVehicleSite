@@ -1,8 +1,14 @@
 import React from 'react';
 import * as Components from '../components';
 
-const images = import.meta.glob('../images/cars/*.{jpg,jpeg,png}', { eager: true });
-const carImages = Object.entries(images).map(([path, image]) => ({
+const regularImages = import.meta.glob('../images/cars/*.{jpg,jpeg,png}', { eager: true });
+const carImages = Object.entries(regularImages).map(([path, image]) => ({
+  name: path.split('/').pop().replace(/\.(jpg|jpeg|png)$/, ''),
+  image: image.default
+}));
+
+const reccomendedImages = import.meta.glob('../images/reccomendedcars/*.{jpg,jpeg,png}', { eager: true });
+const reccomendedCarImages = Object.entries(reccomendedImages).map(([path, image]) => ({
   name: path.split('/').pop().replace(/\.(jpg|jpeg|png)$/, ''),
   image: image.default
 }));
@@ -67,9 +73,11 @@ const Home = () => {
       <div className='p-8 text-center'>
         <h1 className="text-xl font-semibold">Recommended cars:</h1>
         <div className="flex flex-wrap justify-center gap-4">
-        
+          {reccomendedCarImages.map((car, index) => (
+            <Components.CarOption key={index} name={car.name} image={car.image} stats={Stats_Entries} variant='reccomended' />
+          ))}
           {carImages.map((car, index) => (
-            <Components.CarOption key={index} name={car.name} image={car.image} stats={Stats_Entries} />
+            <Components.CarOption key={index} name={car.name} image={car.image} stats={Stats_Entries} variant='default' />
           ))}
         </div>
         <div className='justify-center p-8'>
