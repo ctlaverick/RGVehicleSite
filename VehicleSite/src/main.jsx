@@ -5,6 +5,7 @@ import './index.css';
 import * as Components from './components';
 import Home from './pages/Home';
 import About from './pages/About';
+import Search from './pages/Search';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
+          <Route path='/search' element={<Search />} />
           <Route path='/services' element={<Services />} />
           <Route path='/contact' element={<Contact />} />
           {/* <Route path='/privacy-policy' element={<PrivacyPolicy />} />
