@@ -15,8 +15,9 @@ import FAQPage from './pages/FAQ';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
-      <div className='bg-background min-h-screen min-w-full'>
+      <div className='bg-background min-h-screen min-w-full flex flex-col'>
         <Components.Header />
+        <main className="flex-grow">
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
@@ -35,6 +36,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/accessibility' element={<Accessibility />} />
            */}
         </Routes>
+        </main>
         <Components.Footer />
       </div>
     </Router>
