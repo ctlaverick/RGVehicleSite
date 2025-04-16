@@ -6,7 +6,8 @@ const Header = () => {
     const HeaderHeadings = [
       { name: 'Home', path: '/' },
       { name: 'About', path: '/About' },
-      { name: 'Services', path: '/Services' },
+      { name: 'Subscription Vehicles', path: '/search' },
+      // { name: 'Services', path: '/Services' },
       { name: 'Contact', path: '/Contact' }
     ];
   
