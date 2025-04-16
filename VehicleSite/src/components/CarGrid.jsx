@@ -13,7 +13,7 @@ const CarGrid = () => {
   const CarCard = ({ recommended }) => (
     <div className={`border rounded overflow-hidden ${recommended ? 'bg-blue-100' : 'bg-gray-100'}`}>
       {recommended && (
-        <div className="bg-blue-700 text-white text-xs px-2 py-1">Recommended</div>
+        <div className="bg-primary text-white text-xs px-2 py-1">Recommended</div>
       )}
       <div className="h-32 bg-white"> 
         <img
