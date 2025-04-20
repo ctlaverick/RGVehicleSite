@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from './images/logo.png';
+import Login from './pages/Login';
 
-const Header = () => {
+const Header = ({user}) => {
     const HeaderHeadings = [
       { name: 'Home', path: '/' },
       { name: 'About', path: '/About' },
@@ -25,19 +26,36 @@ const Header = () => {
             >
               {name}
             </Link>
+            
           ))}
+          {user && user.isAdmin && (
+          <Link 
+            key="Admin"
+            to="/admin"
+            className="font-bold text-lg uppercase transition duration-300 hover:text-secondary"
+          >
+            Admin
+          </Link>
+            )}
         </nav>
         <div className='flex items-center gap-4'>
+          {user?(
+            <>
+            <Link to='/account'>
+            <MainButton text='Account'/>
+            </Link>
+            </>
+          ):(
+            <>
+          
           <Link to='/signup'>
-            <button className='bg-success text-admin-text py-2 px-4 rounded-lg hover:bg-green-600 hover:text-secondary transition duration-300'>
-              Sign Up
-            </button>
+            <MainButton text='Signup'/>
           </Link>
           <Link to='/login'>
-            <button className='bg-success text-admin-text py-2 px-4 rounded-lg hover:bg-green-600 hover:text-secondary transition duration-300'>
-              Login
-            </button>
+            <MainButton text='Login'/>
           </Link>
+          </>
+          )}
         </div>
       </header>
     );

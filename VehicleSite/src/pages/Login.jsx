@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as Components from '../components';
 import { Login_data } from './Signup';
 
-const Login = () => {
+const Login = ({ setLoggedInUser }) => {
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
 
@@ -17,8 +17,8 @@ const Login = () => {
     );
 
     if (user) {
+      setLoggedInUser(user);
       alert(`Welcome back, ${user.username}!`);
-      console.log('Logged in user:', user);
     } else {
       alert('Invalid username/email or password.');
     }
@@ -59,5 +59,6 @@ const Login = () => {
     </div>
   );
 };
+
 
 export default Login;
