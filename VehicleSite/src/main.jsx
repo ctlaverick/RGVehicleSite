@@ -6,6 +6,7 @@ import * as Components from './components';
 import Home from './pages/Home';
 import About from './pages/About';
 import Search from './pages/Search';
+import VehicleOverview from './pages/VehicleOverview';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
@@ -21,7 +22,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/search' element={<Search />} />
-          <Route path='/services' element={<Services />} />
+          <Route path='/overview/:id' element={<VehicleOverview />} />
+          <Route path='/services' element={<Services />} /> {/* Not needed?*/}
           <Route path='/contact' element={<Contact />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
