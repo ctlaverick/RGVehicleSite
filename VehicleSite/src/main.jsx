@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
@@ -12,33 +12,33 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import FAQPage from './pages/FAQ';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Router>
-      <div className='bg-background min-h-screen min-w-full flex flex-col'>
-        <Components.Header />
-        <main className="flex-grow">
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/search' element={<Search />} />
-          <Route path='/services' element={<Services />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/signup' element={<Signup />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/faq' element={<FAQPage />} />
-          {/* <Route path='/privacy-policy' element={<PrivacyPolicy />} />
-          <Route path='/cookie-policy' element={<CookiePolicy />} />
-          <Route path='/terms-of-service' element={<TermsOfService />} />
-          <Route path='/news' element={<News />} />
-          <Route path='/terms-and-conditions' element={<TermsAndConditions />} />
-          <Route path='/subscriptions' element={<Subscriptions />} />
-          <Route path='/accessibility' element={<Accessibility />} />
-           */}
-        </Routes>
-        </main>
-        <Components.Footer />
-      </div>
-    </Router>
-  </React.StrictMode>
-);
+const App = () => {
+  // Declare the logged-in user state inside the functional component
+  const [loggedInUser, setLoggedInUser] = useState(null);
+
+  return (
+    <React.StrictMode>
+      <Router>
+        <div className='bg-background min-h-screen min-w-full flex flex-col'>
+          <Components.Header user={loggedInUser} />
+          <main className="flex-grow">
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/search' element={<Search />} />
+              <Route path='/services' element={<Services />} />
+              <Route path='/contact' element={<Contact />} />
+              <Route path='/signup' element={<Signup />} />
+              <Route path='/login' element={<Login setLoggedInUser={setLoggedInUser} />} />
+              <Route path='/faq' element={<FAQPage />} />
+            </Routes>
+          </main>
+          <Components.Footer />
+        </div>
+      </Router>
+    </React.StrictMode>
+  );
+};
+
+// Render the App component to the DOM
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
