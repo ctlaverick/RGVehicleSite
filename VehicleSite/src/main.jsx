@@ -14,7 +14,6 @@ import Signup from './pages/Signup';
 import FAQPage from './pages/FAQ';
 
 const App = () => {
-  // Declare the logged-in user state inside the functional component
   const [loggedInUser, setLoggedInUser] = useState(null);
 
   return (
@@ -26,9 +25,8 @@ const App = () => {
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/about' element={<About />} />
-              <Route path='/search' element={<Search />} />
+              <Route path='/subscriptions' element={<Search />} />
               <Route path='/overview/:id' element={<VehicleOverview />} />
-              <Route path='/services' element={<Services />} /> {/* Not needed?*/}
               <Route path='/contact' element={<Contact />} />
               <Route path='/signup' element={<Signup />} />
               <Route path='/login' element={<Login setLoggedInUser={setLoggedInUser} />} />
@@ -42,5 +40,4 @@ const App = () => {
   );
 };
 
-// Render the App component to the DOM
 ReactDOM.createRoot(document.getElementById('root')).render(<App />);

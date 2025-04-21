@@ -6,10 +6,9 @@ import Login from './pages/Login';
 const Header = ({user}) => {
     const HeaderHeadings = [
       { name: 'Home', path: '/' },
-      { name: 'About', path: '/About' },
-      { name: 'Subscription Vehicles', path: '/search' },
-      // { name: 'Services', path: '/Services' },
-      { name: 'Contact', path: '/Contact' }
+      { name: 'About', path: '/about' },
+      { name: 'Subscription Vehicles', path: '/subscriptions' },
+      { name: 'Contact', path: '/contact' }
     ];
   
     return (
@@ -42,7 +41,7 @@ const Header = ({user}) => {
           {user?(
             <>
             <Link to='/account'>
-            <MainButton text='Account'/>
+              <MainButton text='Account'/>
             </Link>
             </>
           ):(
@@ -63,7 +62,7 @@ const Header = ({user}) => {
 
 const Footer = () => {
   const FooterHeadings = [
-    { name: 'Contact us', path: '/contact-us' },
+    { name: 'Contact us', path: '/contact' },
     { name: 'Privacy policy', path: '/privacy-policy' },
     { name: 'About us', path: '/about' },
     { name: 'Cookie policy', path: '/cookie-policy' },
