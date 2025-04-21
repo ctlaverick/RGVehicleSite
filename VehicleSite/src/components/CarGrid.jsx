@@ -1,16 +1,18 @@
+import LinkButton from "./LinkButton";
+
 const CarGrid = () => {
   // Replace this with actual data the styling is done in the CarCard component
     const cars = new Array(48).fill(0); // Mock data
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
         {cars.map((_, idx) => (
-          <CarCard key={idx} recommended={idx < 4} />
+          <CarCard key={idx} recommended={idx < 4} id={idx} />
         ))}
       </div>
     );
   };
   
-  const CarCard = ({ recommended }) => (
+  const CarCard = ({ recommended, id }) => (
     <div className={`border rounded overflow-hidden ${recommended ? 'bg-blue-100' : 'bg-gray-100'}`}>
       {recommended && (
         <div className="bg-primary text-white text-xs px-2 py-1">Recommended</div>
@@ -26,7 +28,7 @@ const CarGrid = () => {
         <div className="text-sm font-semibold">Brand - Model</div>
         <div className="flex justify-between items-center mt-1">
           <span className="font-bold">£145 pm</span>
-          <button className="bg-green-500 text-white text-sm px-3 py-1 rounded hover:bg-green-600">View</button>
+          <LinkButton text="View" link={`/overview/${id}`} className={"bg-green-500 text-white text-sm px-3 py-1 rounded hover:bg-green-600"} />
         </div>
       </div>
     </div>
