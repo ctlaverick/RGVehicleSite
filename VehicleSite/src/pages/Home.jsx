@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import * as Components from '../components';
 
 const regularImages = import.meta.glob('../images/cars/*.{jpg,jpeg,png}', { eager: true });
@@ -46,7 +47,9 @@ const Home = () => {
         <p className="mb-4">
           Your next car is just a click away...
         </p>
+        <Link to='/subscriptions'>
         <Components.MainButton text='View Subscription Cars'/>
+        </Link>
       </div>
       <div className="w-1/2">
         <img
@@ -67,7 +70,9 @@ const Home = () => {
           <input type="text" className="w-xs p-2.5 m-4 text-sm rounded-lg bg-admin-background" placeholder="Maximum"/>
         </div>
         <div className='flex flex-wrap justify-center gap-4'>
+        <Link to='/subscriptions'>
           <Components.MainButton text='Search'/>
+        </Link>
         </div>
       </div>
       <div className='p-8 text-center'>
@@ -81,7 +86,9 @@ const Home = () => {
           ))}
         </div>
         <div className='justify-center p-8'>
+        <Link to='/subscriptions'>
           <Components.MainButton text='View more options'/>
+        </Link>
         </div>
       </div>
       <div className="p-8 text-center">
