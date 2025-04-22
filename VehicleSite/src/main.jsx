@@ -12,6 +12,7 @@ import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import FAQPage from './pages/FAQ';
+import Account from './pages/Account';
 
 const App = () => {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -31,6 +32,7 @@ const App = () => {
               <Route path='/signup' element={<Signup />} />
               <Route path='/login' element={<Login setLoggedInUser={setLoggedInUser} />} />
               <Route path='/faq' element={<FAQPage />} />
+              <Route path='/account' element={<Account user={loggedInUser}/>} />
             </Routes>
           </main>
           <Components.Footer />
