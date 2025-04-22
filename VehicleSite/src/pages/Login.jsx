@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import * as Components from '../components';
 import { Login_data } from './Signup';
+import { useNavigate } from 'react-router-dom';
 
 const Login = ({ setLoggedInUser }) => {
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -19,6 +21,7 @@ const Login = ({ setLoggedInUser }) => {
     if (user) {
       setLoggedInUser(user);
       alert(`Welcome back, ${user.username}!`);
+      navigate('/');
     } else {
       alert('Invalid username/email or password.');
     }
