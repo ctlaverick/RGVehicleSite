@@ -15,7 +15,10 @@ import FAQPage from './pages/FAQ';
 import Account from './pages/Account';
 
 const App = () => {
-  const [loggedInUser, setLoggedInUser] = useState(null);
+  const [loggedInUser, setLoggedInUser] = useState(() => {
+    const savedUser = localStorage.getItem('loggedInUser');
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
 
   return (
     <React.StrictMode>
@@ -32,7 +35,7 @@ const App = () => {
               <Route path='/signup' element={<Signup />} />
               <Route path='/login' element={<Login setLoggedInUser={setLoggedInUser} />} />
               <Route path='/faq' element={<FAQPage />} />
-              <Route path='/account' element={<Account user={loggedInUser}/>} />
+              <Route path='/account' element={<Account user={loggedInUser} setLoggedInUser={setLoggedInUser}/>} />
             </Routes>
           </main>
           <Components.Footer />

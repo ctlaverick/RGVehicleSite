@@ -3,8 +3,8 @@ import * as Components from '../components';
 import { useNavigate } from 'react-router-dom';
 
 export const Login_data = [
-  { username: 'User1', email: 'User1@mail.co', password: 'Password1', isAdmin: false },
-  { username: 'Admin1', email: 'Admin1@mail.co', password: 'AdminPassword1', isAdmin: true }
+  { username: 'User1', email: 'User1@mail.co', password: 'Password1',CardNumber:'1234 4567 8910 1112', isAdmin: false },
+  { username: 'Admin1', email: 'Admin1@mail.co', password: 'AdminPassword1',CardNumber:'2111 0198 7654 4321', isAdmin: true }
 ];
 
 const Signup = () => {
@@ -34,7 +34,7 @@ const Signup = () => {
       return;
     }
 
-    const newUser = { username, email, password, isAdmin: false };
+    const newUser = { username, email, password, isAdmin: false, CardNumber: '' };
     Login_data.push(newUser);
     alert('Sign up successful! You can now log in.');
     
