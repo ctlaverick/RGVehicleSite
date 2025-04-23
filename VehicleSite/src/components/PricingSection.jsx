@@ -5,6 +5,7 @@ import PricingCard from './PricingCard';
 function PricingSection({vehicle}) {
     const [selectedOption, setSelectedOption] = useState('Weekly');   
 
+    
     const getPriceData = (basePrice) => {
         let multiplyer = 1; // Default multiplier for weekly pricing 
         let discount = 0;
@@ -25,6 +26,7 @@ function PricingSection({vehicle}) {
             message = 'Save 20% on Yearly plan!';
             break;
         }
+
         const discountedPrice = (basePrice * (1 - discount) * multiplyer).toFixed(2);
         return [discountedPrice, suffix, (message ? `(${message})` : '')];
     };
@@ -98,7 +100,7 @@ function PricingSection({vehicle}) {
 
         <div className="flex flex-col md:flex-row justify-center gap-6">
             {cards.map((card, i) => (
-            <PricingCard key={i} {...card} />
+            <PricingCard key={i} vehicle={vehicle} selectedOption={selectedOption} {...card} />
             ))}
         </div>
         </section>
