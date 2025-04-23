@@ -13,9 +13,18 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import FAQPage from './pages/FAQ';
 import Account from './pages/Account';
+import News from './pages/News';
+import TermsAndConditions from './pages/TermsAndConditions';
+import TermsOfService from './pages/TermsOfService';
+import Accessibility from './pages/Accessibility';
+import CookiePolicy from './pages/CookiePolicy';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 const App = () => {
-  const [loggedInUser, setLoggedInUser] = useState(null);
+  const [loggedInUser, setLoggedInUser] = useState(() => {
+    const savedUser = localStorage.getItem('loggedInUser');
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
 
   return (
     <React.StrictMode>
@@ -32,7 +41,13 @@ const App = () => {
               <Route path='/signup' element={<Signup />} />
               <Route path='/login' element={<Login setLoggedInUser={setLoggedInUser} />} />
               <Route path='/faq' element={<FAQPage />} />
-              <Route path='/account' element={<Account user={loggedInUser}/>} />
+              <Route path='/account' element={<Account user={loggedInUser} setLoggedInUser={setLoggedInUser}/>} />
+              <Route path='/news' element={<News />} />
+              <Route path='/terms-and-conditions' element={<TermsAndConditions />}/>
+              <Route path='/terms-of-service' element={<TermsOfService />}/>
+              <Route path='accessibility' element={<Accessibility />}/>
+              <Route path='cookie-policy' element={<CookiePolicy />}/>
+              <Route path='privacy-policy' element={<PrivacyPolicy />}/>
             </Routes>
           </main>
           <Components.Footer />

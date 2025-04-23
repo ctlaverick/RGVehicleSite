@@ -20,6 +20,7 @@ const Login = ({ setLoggedInUser }) => {
 
     if (user) {
       setLoggedInUser(user);
+      localStorage.setItem('loggedInUser', JSON.stringify(user));
       alert(`Welcome back, ${user.username}!`);
       navigate('/');
     } else {

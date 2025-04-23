@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as Components from '../components';
 
-const Account = ({user}) => {
+const Account = ({ user, setLoggedInUser }) => {
   const [activeTab, setActiveTab] = useState(null);
+  const navigate = useNavigate();
 
   const renderContent = (tab) => {
     switch (tab) {
@@ -24,7 +26,7 @@ const Account = ({user}) => {
               <Components.MainButton type="submit" text="Update account info"/>
             </form>
             <form className="space-y-4 p-2">
-              <input type="integer" placeholder="Card number" className="w-full p-2 border rounded" />
+              <input type="text" placeholder="Card number" className="w-full p-2 border rounded" />
               <Components.MainButton type="submit" text="Update card details"/>
             </form>
           </div>
@@ -33,7 +35,7 @@ const Account = ({user}) => {
         return (
           <div className="bg-admin-background p-4 rounded shadow text-left">
             <h2 className="text-xl font-semibold mb-2">Payment Details</h2>
-            <p>Card: **** **** **** 1234</p>
+            <p>Card: {user.CardNumber}</p>
             <p>Next billing: May 1, 2025</p>
           </div>
         );
@@ -44,6 +46,13 @@ const Account = ({user}) => {
 
   const toggleTab = (tab) => {
     setActiveTab((prev) => (prev === tab ? null : tab));
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('loggedInUser');
+    setLoggedInUser(null);
+
+    navigate('/login');
   };
 
   return (
@@ -70,6 +79,14 @@ const Account = ({user}) => {
             )}
           </div>
         ))}
+      </div>
+      <div className="mt-6 text-center">
+        <button
+          onClick={handleLogout}
+          className="bg-success text-admin-text py-2 px-4 rounded-lg hover:bg-green-600 hover:text-secondary cursor-pointer mt-2"
+        >
+          Logout
+        </button>
       </div>
     </div>
   );
