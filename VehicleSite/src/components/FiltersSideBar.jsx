@@ -43,7 +43,7 @@ const FiltersSidebar = () => {
 
             {/* Distance Filter */}
             <div className="p-4">
-                <label className="font-semibold">Price</label>
+                <label className="font-semibold">Distance</label>
                 <DualRangeSlider
                     className="mt-2"
                     min={0}
