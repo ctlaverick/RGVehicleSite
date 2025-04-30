@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CheckoutProvider } from "./context/CheckoutContext";
 import './index.css';
-import * as Components from './components';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Search from './pages/Search';
@@ -35,7 +36,7 @@ const App = () => {
       <CheckoutProvider>
         <Router>
           <div className='bg-background min-h-screen min-w-full flex flex-col'>
-            <Components.Header user={loggedInUser} />
+            <Header user={loggedInUser} />
             <main className="flex-grow">
               <Routes>
                 <Route path='/' element={<Home />} />
@@ -58,7 +59,7 @@ const App = () => {
                 <Route path='privacy-policy' element={<PrivacyPolicy />}/>
               </Routes>
             </main>
-            <Components.Footer />
+            <Footer />
           </div>
         </Router>
       </CheckoutProvider>

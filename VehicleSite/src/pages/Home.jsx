@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import * as Components from '../components';
+import MainButton from '../components/MainButton';
+import CarOption from '../components/CarOption';
+import StepCard from '../components/StepCard';
+import FaqDropdown from '../components/FaqDropdown';
+
+
 
 const regularImages = import.meta.glob('../images/cars/*.{jpg,jpeg,png}', { eager: true });
 const carImages = Object.entries(regularImages).map(([path, image]) => ({
@@ -14,15 +19,29 @@ const reccomendedCarImages = Object.entries(reccomendedImages).map(([path, image
   image: image.default
 }));
 
-export const FAQ ={
-  "What is a subscription vehicle?":"Answer 1",
-  "How does a subscription vehicle Work?":"Answer 2",
-  "How long can I have a subscription vehicle":"This is a really long answer to a really simple question just to be able to test the size limits of the box that this answer is put in so that it is able to be tested for different paragraphs of text, who knows if this is as long as i need it but im gonna keep typing till i think it should stop so probably right about now.",
-  "How do you pay for a subscription vehicle":"Answer 4",
-  "Do i have to get insurance for the subscription vehicle":"Answer 4",
-  "How often can I upgrade to a newer model":"Answer 4",
-  "Can I have multiple subscription vehicles":"Answer 4",
-}
+export const FAQ = {
+  "What is a subscription vehicle?":
+    "A subscription vehicle is a service that allows you to access a car through a flexible monthly plan. Instead of owning or leasing, you pay a recurring fee that typically includes the vehicle, insurance, maintenance, and roadside assistance.",
+
+  "How does a subscription vehicle Work?":
+    "It works like a car-as-a-service model. You choose a vehicle from the available selection, subscribe for a period that fits your needs, and everything from insurance to servicing is taken care of. You can swap vehicles, pause, or cancel based on your plan terms.",
+
+  "How long can I have a subscription vehicle":
+    "Subscription durations are flexible. You can subscribe for as little as a month or keep the same vehicle for as long as you like, depending on the plan you choose. Some plans offer discounts for longer-term commitments.",
+
+  "How do you pay for a subscription vehicle":
+    "Payment is made through a secure online portal using a credit or debit card. Billing is done monthly, and you'll receive a clear breakdown of what’s included in your subscription.",
+
+  "Do i have to get insurance for the subscription vehicle":
+    "No. Insurance is typically included in the subscription fee, so you’re covered for most common situations. We handle the policy, but you should always check the coverage details and any deductible that may apply.",
+
+  "How often can I upgrade to a newer model":
+    "You can upgrade as often as your plan allows. Some premium plans let you change vehicles every month, while others may offer upgrades every few months or upon renewal.",
+
+  "Can I have multiple subscription vehicles":
+    "Yes, you can have more than one vehicle under subscription, provided your account is in good standing. Each vehicle will have its own monthly fee, and you may need to meet certain criteria for multiple subscriptions."
+};
+
 
 const steps = {
   "1" : ["Search Our Options", ["Browse our collection of vehicles", "Search for your perfect vehicle", "Use our filtering and search system to find the right vehicle for you"]],
@@ -48,7 +67,7 @@ const Home = () => {
           Your next car is just a click away...
         </p>
         <Link to='/subscriptions'>
-        <Components.MainButton text='View Subscription Cars'/>
+          <MainButton text='View Subscription Cars'/>
         </Link>
       </div>
       <div className="w-1/2">
@@ -71,7 +90,7 @@ const Home = () => {
         </div>
         <div className='flex flex-wrap justify-center gap-4'>
         <Link to='/subscriptions'>
-          <Components.MainButton text='Search'/>
+          <MainButton text='Search'/>
         </Link>
         </div>
       </div>
@@ -79,15 +98,15 @@ const Home = () => {
         <h1 className="text-xl font-semibold">Recommended cars:</h1>
         <div className="flex flex-wrap justify-center gap-4">
           {reccomendedCarImages.map((car, index) => (
-            <Components.CarOption key={index} name={car.name} image={car.image} stats={Stats_Entries} variant='reccomended' />
+            <CarOption key={index} name={car.name} image={car.image} stats={Stats_Entries} variant='recommended' />
           ))}
           {carImages.map((car, index) => (
-            <Components.CarOption key={index} name={car.name} image={car.image} stats={Stats_Entries} variant='default' />
+            <CarOption key={index} name={car.name} image={car.image} stats={Stats_Entries} variant='default' />
           ))}
         </div>
         <div className='justify-center p-8'>
         <Link to='/subscriptions'>
-          <Components.MainButton text='View more options'/>
+          <MainButton text='View more options'/>
         </Link>
         </div>
       </div>
@@ -95,7 +114,7 @@ const Home = () => {
         <h2 className="text-xl font-semibold">The 4 Easy Steps To Getting Your New Subscripton Vehicle</h2>
         <div className="flex flex-col justify-center items-center gap-4 mt-4">
           {STEPS_ENTRIES.map(([step, details], index) => (
-          <Components.StepCard key={index} step={step} details={details}/>
+          <StepCard key={index} step={step} details={details}/>
           ))
           }
         </div>
@@ -103,7 +122,7 @@ const Home = () => {
       <div className='p-8 text-center'>
         <h1 className="text-xl font-semibold">FAQ</h1>
         {FAQ_Entries.map(([question, answer], index) => (
-          <Components.FaqDropdown key={index} question={question} answer={answer} />
+          <FaqDropdown key={index} question={question} answer={answer} />
         ))}
       </div>
     </div>

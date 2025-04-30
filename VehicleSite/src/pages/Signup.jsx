@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as Components from '../components';
+import MainButton from '../components/MainButton';
 import { useNavigate } from 'react-router-dom';
 
 export const Login_data = [
@@ -95,7 +95,7 @@ const Signup = () => {
             />
           </div>
           <div className="flex justify-center">
-            <Components.MainButton text="Sign up" type="submit" />
+            <MainButton text="Sign up" type="submit" />
           </div>
         </form>
       </div>

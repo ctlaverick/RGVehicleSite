@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as Components from '../components';
+import MainButton from '../components/MainButton';
 import { Login_data } from './Signup';
 import { useNavigate } from 'react-router-dom';
 
@@ -56,7 +56,7 @@ const Login = ({ setLoggedInUser }) => {
             />
           </div>
           <div className="flex justify-center">
-            <Components.MainButton text="Log in" type="submit" />
+            <MainButton text="Log in" type="submit" />
           </div>
         </form>
       </div>

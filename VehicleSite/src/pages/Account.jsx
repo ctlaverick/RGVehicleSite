@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import * as Components from '../components';
+import MainButton from '../components/MainButton';
 
 const Account = ({ user, setLoggedInUser }) => {
   const [activeTab, setActiveTab] = useState(null);
@@ -23,11 +23,11 @@ const Account = ({ user, setLoggedInUser }) => {
             <form className="space-y-4 p-2">
               <input type="text" placeholder="New Username" className="w-full p-2 border rounded" />
               <input type="email" placeholder="New Email" className="w-full p-2 border rounded" />
-              <Components.MainButton type="submit" text="Update account info"/>
+              <MainButton type="submit" text="Update account info"/>
             </form>
             <form className="space-y-4 p-2">
               <input type="text" placeholder="Card number" className="w-full p-2 border rounded" />
-              <Components.MainButton type="submit" text="Update card details"/>
+              <MainButton type="submit" text="Update card details"/>
             </form>
           </div>
         );

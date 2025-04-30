@@ -1,6 +1,6 @@
 import React from 'react';
-import * as Components from '../components';
 import { FAQ } from './Home';
+import FaqDropdown from '../components/FaqDropdown';
 
 const extraFAQ = { ...FAQ };
 
@@ -16,7 +16,7 @@ const FAQPage = () => {
     return (
         <div className='p-8 text-center'>
         {FAQ_Entries.map(([question, answer], index) => (
-            <Components.FaqDropdown key={index} question={question} answer={answer} />
+            <FaqDropdown key={index} question={question} answer={answer} />
         ))}
         </div>
     );
