@@ -11,25 +11,21 @@ const Accessibility = () => (
     <h2 className="text-xl font-semibold mb-2">1. Our Commitment</h2>
     <p className="mb-4">
       We strive to make our website accessible to the widest possible audience, regardless of technology or ability.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
     </p>
 
     <h2 className="text-xl font-semibold mb-2">2. Standards We Follow</h2>
     <p className="mb-4">
       Our site aims to conform to WCAG 2.1 Level AA guidelines wherever possible. We use accessibility tools and testing to support this goal.
-      Sed dignissim, diam sed placerat placerat, nulla lectus volutpat metus, ut convallis est nisl sit amet turpis.
     </p>
 
     <h2 className="text-xl font-semibold mb-2">3. Ongoing Efforts</h2>
     <p className="mb-4">
       Accessibility is an ongoing effort. We conduct regular audits and updates to ensure continued compliance and improvement.
-      Nulla facilisi. Fusce sollicitudin, sapien id volutpat viverra, erat nisi dapibus elit, vitae placerat quam ligula ac sem.
     </p>
 
     <h2 className="text-xl font-semibold mb-2">4. Assistive Technologies</h2>
     <p className="mb-4">
       Our site is designed to work with popular assistive technologies like screen readers, voice recognition software, and browser accessibility features.
-      In hac habitasse platea dictumst. Quisque ac ligula at odio fermentum tincidunt a nec eros.
     </p>
 
     <h2 className="text-xl font-semibold mb-2">5. Feedback</h2>
@@ -43,7 +39,6 @@ const Accessibility = () => (
     <h2 className="text-xl font-semibold mb-2">6. Third-Party Content</h2>
     <p className="mb-4">
       While we strive to ensure accessibility across all content, some third-party content or integrations may not fully conform to our standards.
-      Etiam posuere turpis vitae ex scelerisque, at tincidunt justo congue.
     </p>
 
     <p className="mt-6 italic text-sm">
