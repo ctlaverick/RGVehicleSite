@@ -1,4 +1,6 @@
 import React from 'react';
+import AboutPageImage1 from '../images/AboutPageImage1.jpg';
+import AboutPageImage2 from '../images/AboutPageImage2.jpg';
 
 const About = () => {
   const companyName = '[Company Name]'; // Replace with your company name
@@ -19,7 +21,7 @@ const About = () => {
         </div>
 
         <div className="w-1/2">
-          <img src="./src/images/AboutPageImage1.jpg" alt="Two people looking at documents infront of a car" className='rounded-md shadow-lg'/>
+          <img src={AboutPageImage1} alt="Two people looking at documents infront of a car" className='rounded-md shadow-lg'/>
           {/* https://www.pexels.com/photo/happy-customer-and-agent-reading-the-contract-4173196/ */}
         </div>
 
@@ -38,7 +40,7 @@ const About = () => {
         </div>
 
         <div className="w-1/2">
-          <img src="./src/images/AboutPageImage2.jpg" alt="Person looking at maps on their phone whilst in a car "  className='rounded-md shadow-lg'/>
+          <img src={AboutPageImage2} alt="Person looking at maps on their phone whilst in a car "  className='rounded-md shadow-lg'/>
           {/* https://www.pexels.com/photo/a-person-checking-the-gps-on-the-cellphone-7362886/ */}
         </div>
       </div>

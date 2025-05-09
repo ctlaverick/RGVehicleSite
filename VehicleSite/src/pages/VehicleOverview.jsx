@@ -4,22 +4,26 @@ import VehicleSpecifications from '../components/VehicleSpecifications';
 import VehicleFeatures from '../components/VehicleFeatures';
 import PricingSection from '../components/PricingSection';
 
+// Placeholder image
+import TempCarImage from '../images/TempCarImage.jpg';
+
 function VehicleOverview() {
     const { id } = useParams(); // Get the vehicle ID from the URL parameters
 
-    if (!id) {
-        id = 0; // Default to 0 if no ID is provided
-        // or
-        // return <div>Error: Vehicle ID not found.</div>;
-    }
+    // if (!id) {
+    //     id = 0; // Default to 0 if no ID is provided
+    //     // or
+    //     // return <div>Error: Vehicle ID not found.</div>;
+    // }
 
     // Use ID to get the vehicle information using the API
     // Placeholder data for demonstration
+    
     const vehicle = {
         id: id,
         price: '£145 pm',
         basePrices: [100, 150, 200], // Example weekly base prices for 3 packages
-        imageUrl: 'src/images/TempCarImage.jpg', // Placeholder image
+        imageUrl: {TempCarImage}, // Placeholder image
 
         make: '[Vehicle Make]',
         model: '[Vehicle Model]',

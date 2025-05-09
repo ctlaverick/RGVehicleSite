@@ -1,4 +1,5 @@
 import LinkButton from "./LinkButton";
+import TempCarImage from "../images/TempCarImage.jpg";
 
 const CarGrid = () => {
   // Replace this with actual data the styling is done in the CarCard component
@@ -19,7 +20,7 @@ const CarGrid = () => {
       )}
       <div className="h-32 bg-white"> 
         <img
-          src={"src/images/TempCarImage.jpg" || '/path/to/placeholder.jpg'}
+          src={TempCarImage}
           alt="Car"
           className="w-full h-full object-cover bg-gray-200"
         />
@@ -28,7 +29,7 @@ const CarGrid = () => {
         <div className="text-sm font-semibold">Brand - Model</div>
         <div className="flex justify-between items-center mt-1">
           <span className="font-bold">£145 pm</span>
-          <LinkButton text="View" link={`/overview/${id}`} className={"bg-green-500 text-white text-sm px-3 py-1 rounded hover:bg-green-600"} />
+          <LinkButton text="View" link={`./overview/${id}`} className={"bg-green-500 text-white text-sm px-3 py-1 rounded hover:bg-green-600"} />
         </div>
       </div>
     </div>

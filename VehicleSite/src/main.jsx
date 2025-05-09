@@ -34,7 +34,7 @@ const App = () => {
   return (
     <React.StrictMode>
       <CheckoutProvider>
-        <Router>
+        <Router basename='/RGVehicleSite/'>
           <div className='bg-background min-h-screen min-w-full flex flex-col'>
             <Header user={loggedInUser} />
             <main className="flex-grow">

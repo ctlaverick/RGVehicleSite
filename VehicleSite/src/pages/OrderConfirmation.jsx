@@ -38,7 +38,7 @@ function OrderConfirmation() {
                     <p className="text-text">Location: {checkoutData.Pickup.location}</p>
                 </div>
 
-                <LinkButton text="Home" link="/" />
+                <LinkButton text="Home" link="./" />
             </div>
         </div>
     );

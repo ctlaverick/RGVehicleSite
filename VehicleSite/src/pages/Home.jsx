@@ -5,6 +5,7 @@ import CarOption from '../components/CarOption';
 import StepCard from '../components/StepCard';
 import FaqDropdown from '../components/FaqDropdown';
 
+import BannerImage from '../images/BannerCar.png';
 
 
 const regularImages = import.meta.glob('../images/cars/*.{jpg,jpeg,png}', { eager: true });
@@ -72,8 +73,8 @@ const Home = () => {
       </div>
       <div className="w-1/2">
         <img
-          src="./src/images/BannerCar.png"
-          alt="Car"
+          src={BannerImage}
+          alt="Banner Image Car"
           className="max-w-full h-auto items-center"
         />
       </div>
